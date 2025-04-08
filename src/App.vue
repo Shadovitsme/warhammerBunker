@@ -6,12 +6,6 @@
   <router-view />
 </template>
 
-<script setup>
-import longerWork from "./bunkerArrays/workLonger/longerWork";
-
-console.log(longerWork());
-</script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
