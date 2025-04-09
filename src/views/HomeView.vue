@@ -1,5 +1,7 @@
 <script setup>
 import catastroph from "@/bunkerArrays/catastroph";
+import workText from "@/bunkerArrays/workLonger/longerWork";
+import CustomButton from "@/components/customButton.vue";
 import ItemCard from "@/components/itemCard.vue";
 import { ref } from "vue";
 const clickCount = ref(0);
@@ -13,13 +15,14 @@ function catastrophRegenerate() {
 </script>
 <template>
   <div>
-    <div class="w-full justify-center flex">
-      <button
-        class="rounded-3xl bg-red-800 hover:bg-red-700 active:bg-red-900 duration-500 py-3 px-5 mb-4 text-red-50 hover:text-red-100 text-2xl hover:animate-pulse font-bold"
-        @click="catastrophRegenerate"
+    <div class="w-full justify-center flex gap-2">
+      <CustomButton @click="catastrophRegenerate">Что случилось!?</CustomButton>
+      <CustomButton
+        v-if="generateCatastroph"
+        @click="generateCatastroph = false"
+        class="opacity-50"
+        >Скрыть катастрофу</CustomButton
       >
-        Катастрофа!
-      </button>
     </div>
     <p
       v-if="generateCatastroph"
@@ -37,24 +40,26 @@ function catastrophRegenerate() {
       </button>
     </div>
 
-    <div class="flex gap-5 transition-all duration-300 items-center">
+    <div
+      class="flex gap-5 transition-all duration-300 items-center w-full justify-center"
+    >
       <div v-if="clickCount > 0" class="transition-all duration-300">
-        <ItemCard head="профессия" text="профессия"></ItemCard>
+        <ItemCard head="профессия"> <p v-html="workText()"></p></ItemCard>
       </div>
       <div v-if="clickCount > 1" class="transition-all duration-300">
-        <ItemCard head="здоровье" text="профессия"></ItemCard>
+        <ItemCard head="здоровье"></ItemCard>
       </div>
       <div v-if="clickCount > 2" class="transition-all duration-300">
-        <ItemCard head="факт" text="профессия"></ItemCard>
+        <ItemCard head="факт"></ItemCard>
       </div>
       <div v-if="clickCount > 3" class="transition-all duration-300">
-        <ItemCard head="хобби" text="профессия"></ItemCard>
+        <ItemCard head="хобби"></ItemCard>
       </div>
       <div v-if="clickCount > 4" class="transition-all duration-300">
-        <ItemCard head="фобия" text="профессия"></ItemCard>
+        <ItemCard head="фобия"></ItemCard>
       </div>
       <div v-if="clickCount > 5" class="transition-all duration-300">
-        <ItemCard head="багаж" text="профессия"></ItemCard>
+        <ItemCard head="багаж"></ItemCard>
       </div>
     </div>
   </div>
