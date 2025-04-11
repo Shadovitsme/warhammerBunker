@@ -1,5 +1,6 @@
 import generateBiology from "./bunkerArrays/biological";
 import randomizeHealth from "./bunkerArrays/health";
+import hobbyGenerator from "./bunkerArrays/hobby";
 import workText from "./bunkerArrays/workLonger/longerWork";
 
 export function generateRandomInt(min, max) {
@@ -14,6 +15,8 @@ export function whatIsCard(number) {
       return generateBiology();
     case 2:
       return randomizeHealth();
+    case 3:
+      return hobbyGenerator();
     default:
       break;
   }
