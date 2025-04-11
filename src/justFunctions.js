@@ -8,7 +8,15 @@ export function whatIsCard(number) {
   switch (number) {
     case 0:
       return workText();
+    default:
+      break;
+  }
+}
 
+export function whatIsIcon(number) {
+  switch (number) {
+    case 0:
+      return "/Vector.svg";
     default:
       break;
   }

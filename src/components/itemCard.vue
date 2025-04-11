@@ -1,5 +1,5 @@
 <script setup>
-import { whatIsCard } from "@/justFunctions";
+import { whatIsCard, whatIsIcon } from "@/justFunctions";
 import { ref } from "vue";
 
 const props = defineProps({
@@ -30,7 +30,7 @@ const borderCollorArray = [
 <template>
   <div
     @click="cardText = whatIsCard(props.order)"
-    class="relative w-88 h-[500px] bg-[#D0936D] rounded-lg border-8"
+    class="relative w-[300px] h-[450px] bg-[#D0936D] rounded-lg flex items-center border-8 px-4 pb-4 justify-center"
     :style="{ borderColor: borderCollorArray[props.order] }"
   >
     <div
@@ -40,6 +40,7 @@ const borderCollorArray = [
         {{ headArray[props.order] }}
       </p>
     </div>
+    <img class="w-full shrink-0" :src="whatIsIcon(props.order)" />
     <div
       class="absolute top-0 left-0 right-0 z-0 h-4"
       :style="{ backgroundColor: borderCollorArray[props.order] }"
