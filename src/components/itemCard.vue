@@ -30,29 +30,26 @@ const borderCollorArray = [
 <template>
   <div
     @click="cardText = whatIsCard(props.order)"
-    class="relative w-[300px] h-[450px] bg-[#D0936D] rounded-lg flex items-center border-8 px-4 pb-4 justify-center"
-    :style="{ borderColor: borderCollorArray[props.order] }"
+    class="relative w-[300px] h-[450px] rounded-lg items-center p-4 justify-center"
+    :style="{ backgroundColor: borderCollorArray[props.order] }"
   >
     <div
-      class="z-10 absolute rounded-t-lg top-0 left-0 right-0 bg-[#292E36] py-2"
+      class="z-10 absolute items-center rounded-t-lg top-4 left-4 right-4 bg-[#292E36] py-2"
     >
-      <p class="w-full text-xs text-center text-white">
+      <p
+        class="w-full text-center mt-1 text-xl opacity-50 font-bold text-white uppercase"
+      >
         {{ headArray[props.order] }}
       </p>
     </div>
-    <img class="w-full shrink-0" :src="whatIsIcon(props.order)" />
-    <div
-      class="absolute top-0 left-0 right-0 z-0 h-4"
-      :style="{ backgroundColor: borderCollorArray[props.order] }"
-    ></div>
-    <div
-      class="z-10 absolute rounded-b-lg bottom-0 left-0 px-4 right-0 bg-[#292E36] py-2"
-    >
-      <p class="w-full text-center text-white" v-html="cardText"></p>
+    <div class="bg-[#D0936D] rounded-lg h-full flex items-center px-4 pb-16">
+      <img class="w-full shrink-0" :src="whatIsIcon(props.order)" />
     </div>
+
     <div
-      class="absolute bottom-0 left-0 right-0 z-0 h-4"
-      :style="{ backgroundColor: borderCollorArray[props.order] }"
-    ></div>
+      class="z-10 absolute rounded-b-lg bottom-4 left-4 px-4 right-4 bg-[#292E36] py-2"
+    >
+      <p class="w-full text-center text-xl text-white" v-html="cardText"></p>
+    </div>
   </div>
 </template>

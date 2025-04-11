@@ -12,15 +12,12 @@ function catastrophRegenerate() {
 }
 </script>
 <template>
+  <div
+    class="fixed top-0 left-0 right-0 h-40 z-20 bg-gradient-to-b from-[#FBF5F2] from-50% to-transparent"
+  ></div>
   <div class="gap-y-3">
     <div class="w-full justify-center flex gap-2 mb-20">
       <CustomButton @click="catastrophRegenerate">Что случилось!?</CustomButton>
-      <!-- <CustomButton
-        v-if="generateCatastroph"
-        @click="generateCatastroph = false"
-        class="opacity-50"
-        >Скрыть катастрофу</CustomButton -->
-      <!-- > -->
     </div>
     <p
       v-if="generateCatastroph"
