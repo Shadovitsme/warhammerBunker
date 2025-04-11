@@ -1,4 +1,5 @@
 import generateBiology from "./bunkerArrays/biological";
+import fobia from "./bunkerArrays/fobia";
 import randomizeHealth from "./bunkerArrays/health";
 import hobbyGenerator from "./bunkerArrays/hobby";
 import items from "./bunkerArrays/items";
@@ -20,6 +21,8 @@ export function whatIsCard(number) {
       return hobbyGenerator();
     case 4:
       return items();
+    case 5:
+      return fobia();
     default:
       break;
   }

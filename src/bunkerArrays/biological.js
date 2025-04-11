@@ -1,13 +1,8 @@
 import { generateRandomInt } from "@/justFunctions";
 
-const spacesArray = [
-  "Человек",
-  "Вампир",
-  "Орк",
-  "Генокрад",
-  "Эльдари",
-  "Друкхари",
-  "Тау",
+const spacesArray = ["Вампир", "Орк", "Генокрад", "Эльдари", "Друкхари", "Тау"];
+
+const cosmodesantArray = [
   "Багровый кулак",
   "Багровый кулак",
   "Багровый кулак",
@@ -33,11 +28,25 @@ const spacesArray = [
   "Лунный волк",
 ];
 
+function generateSpace() {
+  let work = localStorage.getItem("profession");
+  if (work == "Навигатор") {
+    return "Навигатор";
+  }
+  if (work == "Вольный торговец" || work == "Сенешаль" || work == "Астропат") {
+    return "Человек";
+  }
+  let randomInt = generateRandomInt(0, 100);
+  if (randomInt > 80) {
+    cosmodesantArray[generateRandomInt(0, cosmodesantArray.length - 1)];
+  }
+  if (randomInt < 40) {
+    return spacesArray[generateRandomInt(0, spacesArray.length - 1)];
+  } else return "Человек";
+}
+
 export default function generateBiology() {
-  const space =
-    localStorage.getItem("profession") == "Навигатор"
-      ? "Навигатор"
-      : spacesArray[generateRandomInt(0, spacesArray.length - 1)];
+  const space = generateSpace();
   let biology = "Вид: " + space + "<br/>";
   biology +=
     "Возраст: " +

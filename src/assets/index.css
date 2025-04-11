@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 body {
-    @apply flex items-center justify-center min-h-screen;
-    background-color: #FBF5F2;
-    padding-block: 40px;
+  @apply flex items-center justify-center min-h-screen;
+  background-color: #fbf5f2;
+  padding-top: 160px;
+  padding-bottom: 40px;
 }
