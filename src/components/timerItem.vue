@@ -1,15 +1,15 @@
 <template>
-  <div class="w-56 mt-12">
-    <h1 class="text-2xl w-full font-bold mb-4 text-center text-[#130D0A]">
+  <div class="w-56 fixed top-1/2 transform -translate-y-1/2 z-20 left-1/8">
+    <h1 class="text-2xl w-full font-bold mb-4 text-center text-[#241D1A]">
       Таймер
     </h1>
     <p
-      class="text-4xl font-mono text-center mb-2 text-[#130D0A]"
+      class="text-4xl font-mono text-center mb-2 text-[#241D1A]"
       :class="seconds > 3 ? 'animate-bounce' : ''"
     >
       {{ formatTime }}
     </p>
-    <div class="flex h-12 w-full justify-center">
+    <div class="flex w-full justify-center items-center">
       <CustomButton
         @click="startTimer"
         :disabled="isRunning"
@@ -17,11 +17,11 @@
       >
         {{ isRunning ? "Таймер идет" : "Запустить" }}
       </CustomButton>
-      <CustomButton class="ml-2" :disabled="!isRunning" @click="stopTimer"
+      <CustomButton class="ml-1" :disabled="!isRunning" @click="stopTimer"
         >Стоп</CustomButton
       >
     </div>
-    <div class="flex w-full mt-1 h-15 justify-center">
+    <div class="flex w-full mt-1 justify-center">
       <CustomButton :disabled="!isRunning" @click="resetTimer"
         >Сброс</CustomButton
       >
