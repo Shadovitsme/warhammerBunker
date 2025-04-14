@@ -2,11 +2,13 @@
 import catastroph from "@/bunkerArrays/catastroph";
 import CardGroup from "@/components/cardGroup.vue";
 import CustomButton from "@/components/customButton.vue";
+import ItemCard from "@/components/itemCard.vue";
 import TimerItem from "@/components/timerItem.vue";
 import VoteCard from "@/components/voteCard.vue";
 import { ref } from "vue";
 const generateCatastroph = ref(false);
 let catastrophText = ref("");
+const voteBlock = ref(false);
 
 function catastrophRegenerate() {
   catastrophText.value = catastroph();
@@ -27,10 +29,15 @@ function catastrophRegenerate() {
     >
       {{ catastrophText }}
     </p>
-    <TimerItem v-if="generateCatastroph"></TimerItem>
+    <TimerItem v-if="voteBlock"></TimerItem>
 
-    <CardGroup v-if="generateCatastroph"></CardGroup>
-    <VoteCard v-if="generateCatastroph"></VoteCard>
+    <CardGroup @click="voteBlock = true" v-if="generateCatastroph"></CardGroup>
+    <div
+      v-if="voteBlock"
+      class="flex w-full justify-center items-center mt-10 gap-3"
+    >
+      <VoteCard></VoteCard> <ItemCard></ItemCard>
+    </div>
   </div>
 </template>
 <!-- TODO сделать подсказку следующую за курсором при наведении на карточку -->

@@ -1,3 +1,4 @@
+import returnActionCard from "./bunkerArrays/actionCard";
 import generateBiology from "./bunkerArrays/biological";
 import fobia from "./bunkerArrays/fobia";
 import randomizeHealth from "./bunkerArrays/health";
@@ -23,6 +24,8 @@ export function whatIsCard(number) {
       return items();
     case 5:
       return fobia();
+    case undefined:
+      return returnActionCard();
     default:
       break;
   }
@@ -42,6 +45,8 @@ export function whatIsIcon(number) {
       return "/suitcase_svgrepo.com.svg";
     case 5:
       return "/eye-fear_svgrepo.com.svg";
+    case undefined:
+      return "/pulse.svg";
     default:
       break;
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-56 fixed top-1/2 transform -translate-y-1/2 z-20 left-1/8">
+  <div class="w-56 fixed top-1/2 transform -translate-y-1/2 z-20 left-16">
     <h1 class="text-2xl w-full font-bold mb-4 text-center text-[#241D1A]">
       Таймер
     </h1>

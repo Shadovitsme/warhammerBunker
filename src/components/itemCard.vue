@@ -31,7 +31,10 @@ const borderCollorArray = [
   <div
     @click="cardText = whatIsCard(props.order)"
     class="relative w-[300px] h-[450px] rounded-lg items-center p-4 justify-center"
-    :style="{ backgroundColor: borderCollorArray[props.order] }"
+    :style="{
+      backgroundColor:
+        props.order != undefined ? borderCollorArray[props.order] : '#846389',
+    }"
   >
     <div
       class="z-10 absolute items-center rounded-t-lg top-4 left-4 right-4 bg-[#292E36] py-2"
@@ -39,7 +42,9 @@ const borderCollorArray = [
       <p
         class="w-full text-center mt-1 text-xl opacity-50 font-bold text-white uppercase"
       >
-        {{ headArray[props.order] }}
+        {{
+          props.order != undefined ? headArray[props.order] : "Карта действия"
+        }}
       </p>
     </div>
     <div class="bg-[#D0936D] rounded-lg h-full flex items-center px-4 pb-16">
