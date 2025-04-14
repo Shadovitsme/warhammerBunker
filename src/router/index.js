@@ -8,11 +8,6 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/shadovitsme.github.io/warhammerBunker/",
-    name: "home",
-    component: HomeView,
-  },
-  {
     path: "/about",
     name: "about",
     // route level code-splitting
