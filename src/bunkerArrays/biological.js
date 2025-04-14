@@ -1,6 +1,25 @@
 import { generateRandomInt } from "@/justFunctions";
 
-const spacesArray = ["Вампир", "Орк", "Генокрад", "Эльдари", "Друкхари", "Тау"];
+const spacesArray = [
+  "Вампир",
+  "Орк",
+  "Генокрад",
+  "Эльдари",
+  "Друкхари",
+  "Тау",
+  "Некрон",
+  "Кин",
+  "Ю'ват",
+  "Баргези",
+  "Веспиды",
+  "Вискеон",
+  "Демиурги",
+  "Джокаеро",
+  "Кв'Орл",
+  "Скват",
+  "Скаввен",
+  "Зверочеловек",
+];
 
 const cosmodesantArray = [
   "Багровый кулак",
@@ -37,30 +56,34 @@ function generateSpace() {
     return "Человек";
   }
   let randomInt = generateRandomInt(0, 100);
-  if (randomInt > 80) {
-    cosmodesantArray[generateRandomInt(0, cosmodesantArray.length - 1)];
+  // Установка процентного соотношения встречающихся существ
+  if (randomInt < 3) {
+    return "Вечный";
   }
-  if (randomInt < 40) {
+  if (randomInt > 90) {
+    return cosmodesantArray[generateRandomInt(0, cosmodesantArray.length - 1)];
+  }
+  if (randomInt < 30) {
     return spacesArray[generateRandomInt(0, spacesArray.length - 1)];
   } else return "Человек";
 }
 
 export default function generateBiology() {
-  const space = generateSpace();
-  let biology = "Вид: " + space + "<br/>";
+  const species = generateSpace();
+  let biology = "Вид: " + species + "<br/>";
   biology +=
     "Возраст: " +
     (Number(localStorage.getItem("stage")) + generateRandomInt(14, 100)) +
     "<br/>";
 
-  let male = generateMale(space);
+  let male = generateMale(species);
 
   biology += "Пол: " + male;
   return biology;
 }
 
-function generateMale(space) {
-  if (space == "Генокрад (назовите игрокам любую расу)") {
+function generateMale(species) {
+  if (species == "Генокрад (назовите игрокам любую расу)") {
     return "Генокрад";
   }
   switch (generateRandomInt(0, 3)) {

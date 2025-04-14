@@ -28,3 +28,4 @@ function catastrophRegenerate() {
     <CardGroup v-if="generateCatastroph"></CardGroup>
   </div>
 </template>
+<!-- TODO сделать подсказку следующую за курсором при наведении на карточку -->

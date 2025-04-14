@@ -3,7 +3,7 @@ import fobia from "./bunkerArrays/fobia";
 import randomizeHealth from "./bunkerArrays/health";
 import hobbyGenerator from "./bunkerArrays/hobby";
 import items from "./bunkerArrays/items";
-import workText from "./bunkerArrays/workLonger/longerWork";
+import workText from "./bunkerArrays/longerWork";
 
 export function generateRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
