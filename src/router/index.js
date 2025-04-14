@@ -8,7 +8,7 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/warhammerBunker",
+    path: "/shadovitsme.github.io/warhammerBunker/",
     name: "home",
     component: HomeView,
   },
