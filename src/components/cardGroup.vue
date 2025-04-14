@@ -13,26 +13,28 @@ function rerun() {
 </script>
 
 <template>
-  <div class="w-full flex justify-center mb-3 gap-2">
-    <CustomButton @click="clickCounter < 6 ? clickCounter++ : clickCounter"
-      >Кто я?</CustomButton
+  <div class="my-auto">
+    <div class="w-full flex justify-center mb-3 gap-2">
+      <CustomButton @click="clickCounter < 6 ? clickCounter++ : clickCounter"
+        >Кто я?</CustomButton
+      >
+      <CustomButton v-if="clickCounter > 0" class="opacity-50" @click="rerun"
+        >rerun</CustomButton
+      >
+    </div>
+    <transition-group
+      name="fade"
+      tag="div"
+      class="grid grid-rows-2 grid-flow-col-dense mx-auto gap-3 w-fit"
     >
-    <CustomButton v-if="clickCounter > 0" class="opacity-50" @click="rerun"
-      >rerun</CustomButton
-    >
+      <ItemCard
+        v-for="i in clickCounter"
+        :key="i"
+        :order="i - 1"
+        class="transition-all duration-300"
+      ></ItemCard>
+    </transition-group>
   </div>
-  <transition-group
-    name="fade"
-    tag="div"
-    class="grid grid-rows-2 grid-flow-col-dense mx-auto gap-3 w-fit"
-  >
-    <ItemCard
-      v-for="i in clickCounter"
-      :key="i"
-      :order="i - 1"
-      class="transition-all duration-300"
-    ></ItemCard>
-  </transition-group>
 </template>
 
 <style scoped>

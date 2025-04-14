@@ -2,6 +2,7 @@
 import catastroph from "@/bunkerArrays/catastroph";
 import CardGroup from "@/components/cardGroup.vue";
 import CustomButton from "@/components/customButton.vue";
+import TimerItem from "@/components/timerItem.vue";
 import { ref } from "vue";
 const generateCatastroph = ref(false);
 let catastrophText = ref("");
@@ -25,6 +26,8 @@ function catastrophRegenerate() {
     >
       {{ catastrophText }}
     </p>
+    <TimerItem></TimerItem>
+
     <CardGroup v-if="generateCatastroph"></CardGroup>
   </div>
 </template>

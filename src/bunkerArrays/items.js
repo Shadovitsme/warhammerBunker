@@ -1,7 +1,7 @@
 import { generateRandomInt } from "@/justFunctions";
 
 export default () => {
-  return itemsArray[generateRandomInt(0, itemsArray.length - 1)];
+  return generateItem();
 };
 
 const itemsArray = [
@@ -24,6 +24,27 @@ const itemsArray = [
   "Ксеноелда",
   "Маленькая собачка",
   "Чья-то конечность",
-  "[личная вещь другого игрока(потом реализовать)]",
   "блоха",
 ];
+
+const playerItems = [
+  "Пиктограф Анатолия",
+  "Сигареты Астории",
+  "Годовой отчет Астории",
+  "Красивые гайки Бриар",
+  "Табак Сайк",
+  "Сабля 701",
+  "Камень души Алаикан",
+  "Дневник Раксаэдалис",
+  "Боевые стимуляторы Эйера",
+  "Фляга Анатолия",
+];
+
+function generateItem() {
+  const randomIndex = generateRandomInt(0, itemsArray.length);
+  if (randomIndex == itemsArray.length) {
+    return playerItems[generateRandomInt(0, playerItems.length - 1)];
+  } else {
+    return itemsArray[randomIndex];
+  }
+}
