@@ -34,19 +34,19 @@ export function whatIsCard(number) {
 export function whatIsIcon(number) {
   switch (number) {
     case 0:
-      return "/Vector.svg";
+      return "./Vector.svg";
     case 1:
-      return "/dna.svg";
+      return "./dna.svg";
     case 2:
-      return "/health_svgrepo.com.svg";
+      return "./health_svgrepo.com.svg";
     case 3:
-      return "/brush.svg";
+      return "./brush.svg";
     case 4:
-      return "/suitcase_svgrepo.com.svg";
+      return "./suitcase_svgrepo.com.svg";
     case 5:
-      return "/eye-fear_svgrepo.com.svg";
+      return "./eye-fear_svgrepo.com.svg";
     case undefined:
-      return "/pulse.svg";
+      return "./pulse.svg";
     default:
       break;
   }
