@@ -3,7 +3,7 @@ import HomeView from "../views/HomeView.vue";
 
 const routes = [
   {
-    path: "/warhammerBunker",
+    path: "/",
     name: "home",
     component: HomeView,
   },
@@ -19,7 +19,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory("/warhammerBunker/"),
   routes,
 });
 
