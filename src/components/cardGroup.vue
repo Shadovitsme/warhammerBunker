@@ -25,13 +25,13 @@ function rerun() {
     <transition-group
       name="fade"
       tag="div"
-      class="grid grid-rows-2 grid-flow-col-dense mx-auto gap-3 w-fit"
+      class="md:grid md:grid-rows-2 md:grid-flow-col-dense md:overflow-visible overflow-x-scroll flex md:max-w-full max-w-xs md:mx-auto gap-3 md:w-fit"
     >
       <ItemCard
         v-for="i in clickCounter"
         :key="i"
         :order="i - 1"
-        class="transition-all duration-300"
+        class="transition-all duration-300 shrink-0"
       ></ItemCard>
     </transition-group>
   </div>

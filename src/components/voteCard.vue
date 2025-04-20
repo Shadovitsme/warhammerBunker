@@ -3,7 +3,7 @@ import VoteField from "./voteField.vue";
 </script>
 
 <template>
-  <div class="rounded-2xl w-md bg-[#5F4A4E] space-y-2 p-4">
+  <div class="rounded-2xl w-full md:w-md bg-[#5F4A4E] space-y-2 p-4">
     <p class="w-full text-center font-bold text-2xl text-[#D6D1C9]">
       Карта голосования
     </p>
