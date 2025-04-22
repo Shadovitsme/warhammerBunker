@@ -56,7 +56,10 @@ const borderCollorArray = [
     <div
       class="z-10 absolute rounded-b-lg md:bottom-4 bottom-2 left-2 right-2 md:left-4 md:px-4 md:right-4 bg-[#292E36] py-2"
     >
-      <p class="w-full text-center text-xl text-white" v-html="cardText"></p>
+      <p
+        class="w-full text-center text-base md:text-xl text-white"
+        v-html="cardText"
+      ></p>
     </div>
   </div>
 </template>

@@ -25,7 +25,7 @@ function catastrophRegenerate() {
     </div>
     <p
       v-if="generateCatastroph"
-      class="animate-bounce w-full text-center text-5xl mb-20 text-[#241D1A]"
+      class="animate-bounce w-full text-center text-4xl md:text-5xl mb-20 text-[#241D1A]"
     >
       {{ catastrophText }}
     </p>

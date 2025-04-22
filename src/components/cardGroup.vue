@@ -25,7 +25,7 @@ function rerun() {
     <transition-group
       name="fade"
       tag="div"
-      class="md:grid md:grid-rows-2 md:grid-flow-col-dense md:overflow-visible overflow-x-scroll flex md:max-w-full max-w-xs md:mx-auto gap-3 md:w-fit"
+      class="md:grid md:grid-rows-2 md:grid-flow-col-dense md:overflow-visible overflow-x-scroll flex md:max-w-full max-w-xs mx-auto gap-3 md:w-fit"
     >
       <ItemCard
         v-for="i in clickCounter"
