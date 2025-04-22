@@ -34,9 +34,9 @@ function catastrophRegenerate() {
     <CardGroup @click="voteBlock = true" v-if="generateCatastroph"></CardGroup>
     <div
       v-if="voteBlock"
-      class="md:flex w-full justify-center items-center mt-10 gap-3"
+      class="md:flex w-full space-y-5 justify-center items-center mt-10 gap-3"
     >
-      <VoteCard></VoteCard> <ItemCard></ItemCard>
+      <VoteCard></VoteCard> <ItemCard class="mx-auto"></ItemCard>
     </div>
   </div>
 </template>

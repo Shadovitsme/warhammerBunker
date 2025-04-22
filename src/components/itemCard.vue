@@ -30,7 +30,7 @@ const borderCollorArray = [
 <template>
   <div
     @click="cardText = whatIsCard(props.order)"
-    class="relative w-[164px] h-[228px] md:w-[300px] md:h-[450px] rounded-lg items-center p-2 md:p-4 justify-center"
+    class="relative w-[200px] h-[300px] md:w-[300px] md:h-[450px] rounded-lg items-center p-2 md:p-4 justify-center"
     :style="{
       backgroundColor:
         props.order != undefined ? borderCollorArray[props.order] : '#846389',
