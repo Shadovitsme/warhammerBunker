@@ -6,19 +6,31 @@ const playerHere = ref(1);
 const number = ref(1);
 const roadCounter = ref(2);
 
-let formulaArray = [];
+const formulaArray = ref([]);
 
-for (let i = 1; i < roadCounter.value + 1; i++) {
-  formulaArray.push({
-    formulaText: "+" + i,
-    formulaAction: "+",
-    formulaNum: i,
-  });
+const actionArray = ["+", "=", "-", "/", "*"];
+
+function refillFormulaArray() {
+  for (let i = 1; i < roadCounter.value + 1; i++) {
+    let action = actionArray[getRandomInt(actionArray.length)];
+    let num = getRandomInt(100);
+    formulaArray.value.push({
+      formulaText: action + num,
+      formulaAction: action,
+      formulaNum: num,
+    });
+  }
 }
+
+refillFormulaArray();
 
 function chooseRoad(roadNum) {
   playerHere.value = roadNum;
   number.value = number.value + formulaArray[roadNum - 1].formulaNum;
+  refillFormulaArray();
+}
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
 </script>
 
@@ -33,6 +45,7 @@ function chooseRoad(roadNum) {
       :formula="formulaArray[i - 1].formulaText"
       :player-here="playerHere == i"
       :number="number"
+      :enemy-count="getRandomInt(100)"
     ></RoadComponent>
   </div>
 </template>
