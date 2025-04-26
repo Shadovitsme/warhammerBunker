@@ -14,11 +14,22 @@ function refillFormulaArray() {
   for (let i = 1; i < roadCounter.value + 1; i++) {
     let action = actionArray[getRandomInt(actionArray.length)];
     let num = getRandomInt(100);
-    formulaArray.value.push({
-      formulaText: action + num,
-      formulaAction: action,
-      formulaNum: num,
-    });
+    if (
+      formulaArray.value.length > 0 &&
+      formulaArray.value.length <= roadCounter.value
+    ) {
+      formulaArray.value[i - 1] = {
+        formulaText: action + num,
+        formulaAction: action,
+        formulaNum: num,
+      };
+    } else {
+      formulaArray.value.push({
+        formulaText: action + num,
+        formulaAction: action,
+        formulaNum: num,
+      });
+    }
   }
 }
 
@@ -26,7 +37,7 @@ refillFormulaArray();
 
 function chooseRoad(roadNum) {
   playerHere.value = roadNum;
-  number.value = number.value + formulaArray[roadNum - 1].formulaNum;
+  number.value = number.value + formulaArray.value[roadNum - 1].formulaNum;
   refillFormulaArray();
 }
 function getRandomInt(max) {
