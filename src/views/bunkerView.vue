@@ -1,10 +1,10 @@
 <script setup>
 import catastroph from "@/bunkerArrays/catastroph";
-import CardGroup from "@/components/cardGroup.vue";
-import CustomButton from "@/components/customButton.vue";
-import ItemCard from "@/components/itemCard.vue";
-import TimerItem from "@/components/timerItem.vue";
-import VoteCard from "@/components/voteCard.vue";
+import CardGroup from "@/components/bunkerComponent/cardGroup.vue";
+import CustomButton from "@/components/bunkerComponent/customButton.vue";
+import ItemCard from "@/components/bunkerComponent/itemCard.vue";
+import TimerItem from "@/components/bunkerComponent/timerItem.vue";
+import VoteCard from "@/components/bunkerComponent/voteCard.vue";
 import { ref } from "vue";
 const generateCatastroph = ref(false);
 let catastrophText = ref("");
@@ -15,6 +15,7 @@ function catastrophRegenerate() {
   generateCatastroph.value = true;
 }
 </script>
+<!-- TODO сделать император френдли версию без хаоситов -->
 <template>
   <div
     class="fixed top-0 left-0 right-0 h-40 z-20 bg-gradient-to-b from-[#FBF5F2] from-50% to-transparent"

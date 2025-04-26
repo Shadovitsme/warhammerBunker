@@ -2,6 +2,7 @@
 import CustomButton from "./customButton.vue";
 import ItemCard from "./itemCard.vue";
 import { ref } from "vue";
+import MouseFollower from "./mouseFollower.vue";
 const clickCounter = ref(0);
 function rerun() {
   let num = clickCounter.value;
@@ -13,6 +14,13 @@ function rerun() {
 </script>
 
 <template>
+  <MouseFollower target-selector="#target">
+    <div class="p-1 bg-amber-950 opacity-25 rounded-sm text-white text-center">
+      Если вам выпал враг человечества <br />
+      - соврите
+    </div></MouseFollower
+  >
+
   <div class="my-auto">
     <div class="w-full flex justify-center mb-3 gap-2">
       <CustomButton @click="clickCounter < 6 ? clickCounter++ : clickCounter"
@@ -23,6 +31,7 @@ function rerun() {
       >
     </div>
     <transition-group
+      id="target"
       name="fade"
       tag="div"
       class="md:grid md:grid-rows-2 md:grid-flow-col-dense md:overflow-visible overflow-x-scroll flex md:max-w-full max-w-xs mx-auto gap-3 md:w-fit"
